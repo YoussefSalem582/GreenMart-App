@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:greenmart/core/constants/app_images.dart';
+import 'package:greenmart/core/functions/app_navigations.dart';
 import 'package:greenmart/core/styles/app_colors.dart';
 import 'package:greenmart/core/styles/app_texts_styles.dart';
 import 'package:greenmart/core/widgets/app_button.dart';
+import 'package:greenmart/features/auth/page/login_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -57,7 +59,9 @@ class OnboardingScreen extends StatelessWidget {
                 SizedBox(height: 30),
                 AppButton(
                   text: 'Get Started',
-                  onPressed: () {},
+                  onPressed: () {
+                    pushReplacment(context, LoginScreen());
+                  },
                   textStyle: AppTextsStyles.subtitle.copyWith(
                     color: AppColors.white,
                   ),
