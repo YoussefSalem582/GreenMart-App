@@ -60,7 +60,7 @@ class OnboardingScreen extends StatelessWidget {
                 AppButton(
                   text: 'Get Started',
                   onPressed: () {
-                    pushReplacment(context, LoginScreen());
+                    pushReplacement(context, LoginScreen());
                   },
                   textStyle: AppTextsStyles.subtitle.copyWith(
                     color: AppColors.white,

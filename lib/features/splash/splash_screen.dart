@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // delay 2 seconds before navigating to onboarding screen
     Future.delayed(Duration(seconds: 3), () {
-      pushReplacment(context, const OnboardingScreen());
+      pushReplacement(context, const OnboardingScreen());
     });
     super.initState();
   }

@@ -9,7 +9,7 @@ import 'package:greenmart/features/auth/page/otp_screen.dart';
 
 import '../../../core/constants/app_images.dart';
 import '../../../core/functions/app_navigations.dart';
-import 'signup_screen.dart';
+import 'login_screen.dart';
 
 // to handle input validations
 // 1) wrap with form widget
@@ -17,14 +17,14 @@ import 'signup_screen.dart';
 // 3) add validators for each field
 // 4) check if formKey.currentState!.validate() is true when onPressed is called
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   // form key to handle input validations
   final formKey = GlobalKey<FormState>();
 
@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // space
                   SizedBox(height: 40),
                   // Title Text
-                  Text('Log in', style: AppTextsStyles.title),
+                  Text('Sign up', style: AppTextsStyles.title),
                   // space
                   SizedBox(height: 16),
                   // subtitle text
@@ -66,6 +66,32 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   // space
                   SizedBox(height: 40),
+
+                  /// Name form section
+                  // Title Text
+                  Text(
+                    'Name',
+                    style: AppTextsStyles.caption.copyWith(
+                      color: AppColors.textSubtitleColor,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  // space
+                  SizedBox(height: 8),
+                  // email text form field
+                  AppTextFormField(
+                    hintText: 'Enter your name',
+                    keyboardType: TextInputType.name,
+                    // email validator
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Please enter Name';
+                      }
+                      return null;
+                    },
+                  ),
+                  // space
+                  SizedBox(height: 16),
 
                   /// Email form section
                   // Title Text
@@ -116,29 +142,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       return null;
                     },
                   ),
-                  // space
-                  SizedBox(height: 16),
-                  // forget button
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        style: TextButton.styleFrom(padding: EdgeInsets.zero),
-                        onPressed: () {},
-                        child: Text(
-                          'Forget Password ?',
-                          style: AppTextsStyles.caption.copyWith(
-                            color: AppColors.primaryColor,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+
                   // space
                   SizedBox(height: 20),
                   // button
                   AppButton(
-                    text: 'Log in',
+                    text: 'Sign up',
                     onPressed: () {
                       if (formKey.currentState!.validate() == true) {
                         pushTo(context, OtpScreen());
@@ -153,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       // sign up text
                       Text(
-                        'Don’t have an account ?',
+                        'Already have an account ?',
                         style: AppTextsStyles.caption.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
@@ -162,10 +171,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextButton(
                         style: TextButton.styleFrom(padding: EdgeInsets.zero),
                         onPressed: () {
-                          pushReplacement(context, SignupScreen());
+                          pushReplacement(context, LoginScreen());
                         },
                         child: Text(
-                          'Sign up',
+                          'Log in',
                           style: AppTextsStyles.caption.copyWith(
                             color: AppColors.primaryColor,
                             fontWeight: FontWeight.w600,
