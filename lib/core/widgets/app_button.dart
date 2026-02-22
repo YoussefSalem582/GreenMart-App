@@ -28,7 +28,15 @@ class AppButton extends StatelessWidget {
         minimumSize: Size(width, height),
       ),
       onPressed: onPressed,
-      child: Text(text, style: textStyle ?? AppTextsStyles.subtitle),
+      child: Text(
+        text,
+        style:
+            textStyle ??
+            AppTextsStyles.body.copyWith(
+              color: AppColors.white,
+              fontWeight: FontWeight.w600,
+            ),
+      ),
     );
   }
 }
