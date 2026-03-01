@@ -23,7 +23,10 @@ class AppThemes {
         foregroundColor: AppColors.primaryColor,
       ),
     ),
-    //
+    // divider color to set the default color for dividers
+    dividerColor: Colors.transparent,
+    dividerTheme: DividerThemeData(color: AppColors.accentColor),
+    // appBar theme to set the default background color for app bars
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.backgroundColor,
       surfaceTintColor: Colors.transparent,

@@ -5,6 +5,7 @@ import 'package:greenmart/features/home/data/product_model.dart';
 import '../../../core/functions/app_navigations.dart';
 import '../../../core/styles/app_colors.dart';
 import '../../../core/styles/app_texts_styles.dart';
+import '../../product_detail/page/product_detail_screen.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({super.key, required this.model});
@@ -15,7 +16,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        //pushTo(context, DetailsScreen(model: model));
+        pushTo(context, ProductDetailScreen(model: model));
       },
       // hero animation for item card
       child: Container(
