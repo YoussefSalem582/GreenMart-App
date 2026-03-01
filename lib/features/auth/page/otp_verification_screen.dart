@@ -5,7 +5,7 @@ import 'package:greenmart/core/functions/app_navigations.dart';
 import 'package:greenmart/core/styles/app_colors.dart';
 import 'package:greenmart/core/styles/app_texts_styles.dart';
 import 'package:greenmart/features/auth/page/otp_screen.dart';
-import 'package:greenmart/features/home/page/home_screen.dart';
+import 'package:greenmart/features/main/main_app_screen.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../../core/widgets/app_button.dart';
@@ -135,7 +135,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     backgroundColor: AppColors.primaryColor,
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
-                        pushReplacement(context, HomeScreen());
+                        pushReplacement(context, MainAppScreen());
                       }
                     },
                   ),

@@ -40,4 +40,11 @@ class AppTextsStyles {
     // fontFamily: 'Poppins',
     // color: AppColors.black,
   );
+
+  // Caption 2
+  static const TextStyle caption2 = TextStyle(
+    fontSize: 12,
+    // fontFamily: 'Poppins',
+    // color: AppColors.black,
+  );
 }

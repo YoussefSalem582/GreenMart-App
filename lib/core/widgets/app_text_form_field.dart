@@ -10,6 +10,8 @@ class AppTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.keyboardType = TextInputType.text,
     this.validator,
+    this.enabled = true,
+    this.onTap,
   });
   final String? hintText;
   final Widget? prefixIcon;
@@ -17,10 +19,15 @@ class AppTextFormField extends StatelessWidget {
   final TextInputType keyboardType;
   // to handle input validations
   final String? Function(String?)? validator;
+  // to enable or disable the text form field
+  final bool enabled;
+  // to handle on tap event
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      enabled: enabled,
       keyboardType: keyboardType,
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
@@ -33,6 +40,8 @@ class AppTextFormField extends StatelessWidget {
       ),
       // to handle input validations
       validator: validator,
+      // to handle on tap event
+      onTap: onTap,
     );
   }
 }
