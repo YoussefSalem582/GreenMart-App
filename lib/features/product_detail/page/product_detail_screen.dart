@@ -43,7 +43,8 @@ class ProductDetailScreen extends StatelessWidget {
                 ),
               ),
               padding: const EdgeInsets.all(30),
-              child: Image.network(model.image),
+              // hero animation for image with tag of model
+              child: Hero(tag: model, child: Image.network(model.image)),
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),

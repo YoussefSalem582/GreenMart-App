@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:greenmart/features/home/data/product_model.dart';
 
 import '../../../core/functions/app_navigations.dart';
@@ -41,7 +40,12 @@ class ItemCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // image with expanded to take all available space and center the image
-            Expanded(child: Center(child: Image.network(model.image))),
+            // hero animation for image with tag of model
+            Expanded(
+              child: Center(
+                child: Hero(tag: model, child: Image.network(model.image)),
+              ),
+            ),
             SizedBox(height: 10),
             // name with bold font weight and size of 16
             Text(
@@ -51,14 +55,18 @@ class ItemCard extends StatelessWidget {
             SizedBox(height: 6),
             Text(
               model.quantityForPrice,
-              style: AppTextsStyles.caption2.copyWith(color: AppColors.greyColor),
+              style: AppTextsStyles.caption2.copyWith(
+                color: AppColors.greyColor,
+              ),
             ),
             SizedBox(height: 16),
             Row(
               children: [
                 Text(
                   '\$${model.price}',
-                  style: AppTextsStyles.body.copyWith(fontWeight: FontWeight.w600),
+                  style: AppTextsStyles.body.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 Spacer(),
                 FloatingActionButton.small(
