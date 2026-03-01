@@ -17,10 +17,12 @@ class ItemCard extends StatelessWidget {
       onTap: () {
         //pushTo(context, DetailsScreen(model: model));
       },
+      // hero animation for item card
       child: Container(
         width: 160,
         margin: const EdgeInsets.only(bottom: 10),
         padding: const EdgeInsets.all(10),
+        // rounded corners with border and shadow
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: AppColors.backgroundColor,
@@ -33,11 +35,14 @@ class ItemCard extends StatelessWidget {
             ),
           ],
         ),
+        // column with image, name, quantity for price and price with add button
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // image with expanded to take all available space and center the image
             Expanded(child: Center(child: Image.network(model.image))),
             SizedBox(height: 10),
+            // name with bold font weight and size of 16
             Text(
               model.name,
               style: AppTextsStyles.body.copyWith(fontWeight: FontWeight.w600),

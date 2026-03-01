@@ -22,6 +22,7 @@ class AllProductsBuilder extends StatelessWidget {
             ),
           ],
         ),
+        // Grid view of products with 2 columns and spacing of 10 between items and main axis extent of 300
         GridView.builder(
           physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,

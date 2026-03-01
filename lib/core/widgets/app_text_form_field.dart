@@ -12,6 +12,7 @@ class AppTextFormField extends StatelessWidget {
     this.validator,
     this.enabled = true,
     this.onTap,
+    this.onChanged,
   });
   final String? hintText;
   final Widget? prefixIcon;
@@ -23,6 +24,8 @@ class AppTextFormField extends StatelessWidget {
   final bool enabled;
   // to handle on tap event
   final Function()? onTap;
+  // to handle on changed event
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +45,8 @@ class AppTextFormField extends StatelessWidget {
       validator: validator,
       // to handle on tap event
       onTap: onTap,
+      // to handle on changed event
+      onChanged: onChanged,
     );
   }
 }

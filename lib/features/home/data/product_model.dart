@@ -1,4 +1,4 @@
-// From BE : get list of products as Json => List<Map> or Map
+// From Backend : get list of products as Json => List<Map> or Map
 // Parsing the list of products as List<ProductModel>
 // Use model in the UI
 
@@ -38,6 +38,7 @@
 //}
 // ]
 
+// Model class for product
 class ProductModel {
   final String id;
   final String categoryId;
